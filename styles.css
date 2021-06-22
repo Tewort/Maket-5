@@ -1,0 +1,533 @@
+@font-face {
+    font-family: "Gotham";
+    src: url("fonts/GothamMedium.ttf");
+}
+
+@font-face {
+    font-family: "Gotham Book";
+    src: url("fonts/GothamBook.ttf")
+}
+
+body {
+    margin: 0px;
+}
+
+.wrapper {
+    display: grid;
+    font-family: "Gotham";
+    grid-template-columns: 1fr 5fr 1fr;
+    /*grid-template-columns: repeat(13, 1fr);*/
+    grid-auto-rows: minmax(0px, auto);
+    grid-template-areas:
+        ". header ."
+        "search search search"
+        "filter filter filter"
+        ". content ."
+        "offer offer offer"
+        "footer footer footer";
+}
+
+
+
+/* Header */
+.header {
+    grid-area: header;
+    grid-row: 1;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 74px;
+}
+
+.header_logo {
+    float: left;
+}
+
+.header_right_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.header_navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding-right: 15px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.header_navigation ul li {
+    float: left;
+}
+
+.header_navigation ul li a {
+    display: block;
+    color: #96a6a7;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.header_navigation ul li a:hover {
+    color: #b6c8c9;
+}
+
+.header_buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.header_search_button, .header_menu_button {
+    width: 74px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #e2dee0;
+}
+
+.header_search_button button, .header_login_button button, .header_menu_button button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: white;
+    background-color: transparent;
+}
+
+.header_login_button {
+    width: 162px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #e94e38;
+}
+
+.header_login_button:hover {
+    background-color: #d04531;
+}
+
+.header_login_button:active {
+    background-color: #b73f2e;
+}
+
+.header_menu_button {
+    display: none;
+}
+
+
+
+/* Search block */
+.search {
+    grid-area: search;
+    grid-row: 2;
+    height: 375px;
+    display: grid;
+    place-items: center;
+    background: url(images/Layer%204@1X.png) no-repeat center center;
+    background-size: cover;
+}
+
+.search_background_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.search_headline {
+    color: white;
+    text-shadow: 0px 0px 30px rgba(0, 0, 0, 1);
+    font-family: "Gotham Book";
+}
+
+.search_select_input_block {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px;
+}
+
+.search_select_wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.search_input_wrapper input[type=text], .search_select_wrapper select {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid gray; 
+    border-color: gray;
+    border-radius: 99px;
+    color: white;
+    font-size: 16px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin: 10px;
+}
+
+.search_select_wrapper select {
+    width: 222px;
+    height: 52px;
+}
+
+.search_input_wrapper {
+    width: 100%;
+}
+
+.search_input_wrapper input[type=text] {
+    height: -moz-available;
+    width: -webkit-fill-available;
+    height: fill-available;
+    height: 52px;
+    min-width: 0px;
+}
+
+.search_input_wrapper input[type=text]::placeholder {
+    color: white;
+    font-size: 16px;
+}
+
+.search_button {
+    width: 140px;
+    height: 62px;
+    color: white;
+    background-color: #e94e38;
+    font-size: 16px;
+    font-family: "Gotham";
+    border: none;
+    border-radius: 99px;
+    border-bottom: 2px solid #c1412e;
+    cursor: pointer;
+}
+
+.search_button:hover, .footer_email_input button:hover {
+    background-color: #d0432f;
+}
+
+.search_button:active, .footer_email_input button:active {
+    background-color: #c1412e;
+}
+
+
+
+/* Filter Block */
+.filter {
+    grid-area: filter;
+    grid-row: 3;
+    height: 60px;
+    background-color: white;
+    border-bottom: 2px solid #e2dee0;
+}
+
+.content {
+    grid-area: content;
+    grid-row: 4;
+    background-color: #f3f1f2;
+}
+
+
+
+
+/* Offer */
+.offer {
+    grid-area: offer;
+    grid-row: 5;
+    background-color: #f3f1f2;
+}
+
+.offer_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.offer_text_headline {
+    color: #566375;
+    font-family: "Gotham Book";
+    margin-bottom: 0px;
+}
+
+.offer_text_p {
+    color: #96a6a7;
+    font-family: "Gotham Book";
+    font-size: 13px;
+}
+
+.offer_advantages_list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.offer_advantages_list div {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 99px;
+    border: 2px solid #9dacad;
+    color: #9dacad;
+    margin: 30px 3px 30px 3px;
+}
+
+.offer_advantages_list div:first-child {
+    border: 2px solid #1baf5d !important;
+    color: #1baf5d;
+}
+
+.offer_advantages_list hr {
+    width: 50px;
+    border: none;
+    border-bottom: 2px solid rgba(168, 168, 168, 0.24);
+}
+
+.offer_reality_text {
+    color: #1baf5d;
+    font-family: "Gotham Book";
+    font-size: 20px;
+}
+
+.offer_reality_advantages {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 5px 0px 50px 0px;
+}
+
+.offer_reality_advantages_first_block, .offer_reality_advantages_second_block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0px 50px 50px 50px;
+}
+
+.offer_reality_advantages_first_block div, .offer_reality_advantages_second_block div {
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.offer_reality_advantages_first_icon, .offer_reality_advantages_second_icon {
+    width: 62px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1db05e;
+    color: white;
+    border-radius: 99px;
+}
+
+.offer_reality_advantages_first_block p, .offer_reality_advantages_second_block p {
+    width: 250px;
+    margin: 0px;
+    color: #566375;
+    font-family: "Gotham Book";
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    grid-row: 6;
+    height: 500px;
+    background: url(images/Layer%204@1X.png) no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_foreground {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer h2 {
+    color: white;
+    font-family: "Gotham Book";
+    text-shadow: 0px 0px 30px rgba(0, 0, 0, 1);
+}
+
+.footer_email_input {
+    width: 495px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid gray; 
+    border-color: gray;
+    border-radius: 99px;
+    color: white;
+    padding-left: 35px;
+    padding-right: 5px;
+    margin: 10px;
+}
+
+.footer_email_input input[type=text] {
+    flex-grow: 1;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    padding-left: 20px;
+    font-size: 18px;
+    font-family: "Gotham Book";
+    color: white;
+}
+
+.footer_email_input input[type=text]::placeholder {
+    color: white;
+}
+
+.footer_email_input button {
+    width: 140px;
+    height: 85%;
+    color: white;
+    background-color: #e94e38;
+    font-size: 16px;
+    font-family: "Gotham";
+    border: none;
+    border-radius: 99px;
+    border-bottom: 2px solid #c1412e;
+    cursor: pointer;
+}
+
+.footer_foreground hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid rgba(135, 135, 135, 0.5);
+}
+
+.footer_info_block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+}
+
+.footer_info_block_1, .footer_info_block_2, .footer_follow_us {
+    padding: 20px 50px 20px 50px;
+}
+
+.footer_info_block_1 ul li a, .footer_info_block_2 ul li a {
+    text-decoration: none;
+    color: #c0bebc;
+    font-family: "Gotham Book";
+}
+
+.footer_info_block_1 ul, .footer_info_block_2 ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.footer_social {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer_social a {
+    color: white;
+}
+
+
+
+/* Adaptive Design */
+
+@media screen and (max-width: 717px) {
+    .offer_advantages_list div {
+        margin: 30px;
+    }
+    .offer_advantages_list hr {
+        display: none;
+    }
+    
+    .footer_foreground h2 {
+        display: none;
+    }
+    
+    .footer_email_input {
+        display: none;
+    }
+    
+    .footer_info_block_1, .footer_info_block_2, .footer_follow_us {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .wrapper {
+        grid-template-areas:
+            "header header header"
+            "search search search"
+            "filter filter filter"
+            "content content content"
+            "offer offer offer"
+            "footer footer footer";
+    }
+    
+    .header {
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .wrapper {
+        grid-template-areas:
+            "header header header"
+            "search search search"
+            "filter filter filter"
+            "content content content"
+            "offer offer offer"
+            "footer footer footer";
+    }
+    .header {
+        justify-content: space-between;
+    }
+    .header_navigation, .header_search_button, .header_login_button {
+        display: none;
+    }
+    
+    .header_menu_button {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1431px) {
+    .wrapper {
+        grid-template-areas:
+            "header header header"
+            "search search search"
+            "filter filter filter"
+            ". content ."
+            "offer offer offer"
+            "footer footer footer";
+    }
+    
+}
